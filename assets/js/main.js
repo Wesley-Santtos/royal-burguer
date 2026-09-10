@@ -30,11 +30,23 @@
     if (year) year.textContent = new Date().getFullYear();
   }
 
+  function initFeature(canvas) {
+    if (!canvas) return;
+    var stage = canvas.closest(".feature__stage");
+    var ok = RB.initBurger3D && RB.initBurger3D(canvas);
+    if (!ok && stage) stage.classList.add("no-webgl");
+  }
+
   function boot() {
-    fillConfig();
     var lista = document.getElementById("menu-lista");
     var cats = document.getElementById("cats");
+    var feat = document.getElementById("destaque");
+
+    var featCanvas = RB.renderFeature && RB.renderFeature(feat);
     if (lista && RB.renderMenu) RB.renderMenu(lista, cats);
+
+    fillConfig(); // depois do render: pega os [data-wa] criados dinamicamente
+    initFeature(featCanvas);
     if (RB.initUI) RB.initUI();
   }
 

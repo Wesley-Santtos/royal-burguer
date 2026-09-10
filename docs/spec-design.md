@@ -34,6 +34,10 @@ Site **voltado para celular** (moldura máx. 480px).
   sangrando ~14px para a esquerda; nome em Baloo 2 sobre o branco; painel
   `--brown-soft` arredondado (raio 18px) com descrição branca + preço em `#FFE6BF`.
   Selo opcional em `--red` na base da foto.
+- **Lanche do Momento (`.feature`):** bloco em `--cream` entre a barra de
+  categorias e o cardápio. Selo dourado "⭐ Lanche do Momento", hambúrguer 3D
+  (Three.js, cartoon, gira 360°) em palco de até 300px, dica "↻ arraste para
+  girar", nome (Baloo 2), descrição, preço em `--brown`, botão WhatsApp.
 - **CTA final:** faixa `--brown`, texto creme, botão dourado.
 - **Rodapé:** `--ink`, texto creme, marca + frase manuscrita + contato + links.
 - **Botão flutuante WhatsApp:** verde, canto inferior direito, aparece após o hero.

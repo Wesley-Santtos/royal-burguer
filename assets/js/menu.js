@@ -66,6 +66,43 @@
     return art;
   }
 
+  // bloco "Lanche do Momento" com hambúrguer 3D
+  RB.renderFeature = function (host) {
+    var menu = window.RB_MENU || [];
+    var item = null;
+    menu.forEach(function (cat) {
+      cat.itens.forEach(function (it) {
+        if (it.destaque && !item) item = it;
+      });
+    });
+    if (!item || !host) {
+      if (host) host.hidden = true;
+      return null;
+    }
+
+    host.innerHTML =
+      '<p class="feature__kicker">⭐ Lanche do Momento</p>' +
+      '<div class="feature__stage">' +
+      '<canvas id="feat-canvas" class="feature__canvas" role="img" ' +
+      'aria-label="' +
+      item.nome +
+      ' em 3D — arraste para girar"></canvas>' +
+      '<div class="feature__fallback" aria-hidden="true">🍔</div>' +
+      "</div>" +
+      '<p class="feature__hint"><span aria-hidden="true">↻</span> arraste para girar</p>' +
+      '<h2 class="feature__name">' +
+      item.nome +
+      "</h2>" +
+      '<p class="feature__desc">' +
+      item.descricao +
+      "</p>" +
+      '<span class="feature__price">' +
+      brl.format(item.preco) +
+      "</span>" +
+      '<a class="btn btn--gold" data-wa href="#">Pedir no WhatsApp</a>';
+    return document.getElementById("feat-canvas");
+  };
+
   RB.renderMenu = function (lista, cats) {
     var menu = window.RB_MENU || [];
     lista.innerHTML = "";

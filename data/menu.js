@@ -34,6 +34,7 @@ window.RB_MENU = [
           "Blend 180g, cheddar, bacon crocante, cebola caramelizada e maionese defumada.",
         preco: 34,
         img: "",
+        destaque: true, // aparece no bloco 3D "Lanche do Momento" (só um item)
       },
       {
         nome: "Royal Duplo",

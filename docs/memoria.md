@@ -2,6 +2,23 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-10 — "Lanche do Momento" com 3D 360° (só 1 item)
+
+Cliente quis o 360° de volta, mas **só num item destaque** (não no hero), estilo
+**cartoon**. Discutido: foto giratória precisa de ~32 fotos com prato giratório
+(IA não serve — giro "tremido"); `.glb` no `<model-viewer>` seria bom mas depende
+de achar/baixar um modelo. Escolhido: **Three.js procedural** (já existia no git).
+
+- `assets/js/burger3d.js` restaurado (r128 via cdnjs, global `THREE`). Hambúrguer
+  em camadas, arraste p/ girar (mouse+touch), auto-rotação após 2s de ociosidade,
+  pausa fora da viewport, fallback 🍔 sem WebGL.
+- Novo bloco `#destaque` (`.feature`) entre a barra de categorias e o cardápio.
+  Renderizado por `RB.renderFeature()` a partir do item marcado com
+  `destaque: true` em `data/menu.js` (hoje: Royal Bacon).
+- `main.js`: `fillConfig()` roda **depois** dos renders para pegar o botão
+  `[data-wa]` criado dinamicamente no bloco destaque.
+- Câmera do 3D ajustada p/ o card pequeno: `baseDist 4.3`, câmera y 1.15.
+
 ## 2026-09-10 — Redesign: layout com fotos (mobile-only)
 
 Cliente enviou um mockup e pediu "faça tudo voltado para celular". Mudança de
