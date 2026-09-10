@@ -62,7 +62,17 @@ direção aprovada por ele (contraria a spec original do 3D — avisei antes):
   footer + botão flutuante). Verificado em 375px e 1280px. Sem overflow horizontal.
   Fallback sem WebGL e sob `prefers-reduced-motion` funcionando.
 
+## 2026-09-10 — Deploy (GitHub Pages, isolado)
+
+- `doutorlead.com` NÃO é Hostinger — é **Firebase Hosting** do projeto `dr-lead`
+  (pasta `D:\2. MINHAS EMPRESAS\14. drlead`, CRM Hospital Jardim Botânico).
+  Cliente pediu para **não misturar** o burger com esse projeto.
+- Site publicado no **GitHub Pages**, repo próprio:
+  - repo: https://github.com/Wesley-Santtos/royal-burguer (público, branch `main`, path `/`)
+  - URL: **https://wesley-santtos.github.io/royal-burguer/**
+- Deploy = `git push` na `main` (o Pages rebuilda sozinho, ~1 min).
+- Caminhos são todos relativos → funciona em subpasta sem `<base>`.
+
 ## Pendências / próximas rodadas
-- Deploy em `doutorlead.com/burger` (Hostinger) — pacote + instruções.
 - Trocar placeholders por fotos reais quando o cliente tiver.
 - Cardápio real (hoje é fictício).

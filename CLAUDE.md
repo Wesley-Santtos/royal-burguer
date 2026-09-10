@@ -27,6 +27,11 @@ centralizada no desktop). Cardápio de hamburgueria fictícia.
 `python -m http.server 5500` na raiz, abrir `http://localhost:5500/`.
 (Config em `.claude/launch.json`.)
 
+## Deploy
+GitHub Pages: https://wesley-santtos.github.io/royal-burguer/
+Basta `git push` na `main` — o Pages rebuilda sozinho. **Não** tem relação com o
+projeto `dr-lead` (doutorlead.com / Firebase) — manter separado.
+
 ## Estrutura
 ```
 index.html
