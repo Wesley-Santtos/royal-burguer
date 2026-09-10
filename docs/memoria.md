@@ -19,6 +19,10 @@ Log de decisões e aprendizados. Mais recente no topo.
   carrinho, sem pedido por item.
 - WhatsApp fictício: `5511987654321`.
 
+- **Feito:** site completo rodando local (hero 3D + 4 categorias + diferenciais +
+  footer + botão flutuante). Verificado em 375px e 1280px. Sem overflow horizontal.
+  Fallback sem WebGL e sob `prefers-reduced-motion` funcionando.
+
 ## Pendências / próximas rodadas
 - Deploy em `doutorlead.com/burger` (Hostinger) — pacote + instruções.
 - Trocar placeholders por fotos reais quando o cliente tiver.
