@@ -1,6 +1,5 @@
 /* =============================================================
    Royal Burguer — comportamentos de página
-   header no scroll · scroll suave · botão flutuante · scroll-reveal
    Uso:  RB.initUI()
    ============================================================= */
 (function (RB) {
@@ -10,14 +9,19 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function headerOnScroll() {
-    var header = document.querySelector(".site-header");
-    if (!header) return;
-    var apply = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 80);
-    };
-    apply();
-    window.addEventListener("scroll", apply, { passive: true });
+  // botão flutuante aparece depois do hero
+  function revealChromeOnScroll() {
+    var floatBtn = document.querySelector(".wa-float");
+    var hero = document.querySelector(".hero");
+    if (!floatBtn || !hero) return;
+
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (entries) {
+        floatBtn.classList.toggle("is-visible", !entries[0].isIntersecting);
+      }, { rootMargin: "-70px 0px 0px 0px" }).observe(hero);
+    } else {
+      floatBtn.classList.add("is-visible");
+    }
   }
 
   function smoothAnchors() {
@@ -37,34 +41,46 @@
     });
   }
 
-  function floatingWhatsApp() {
-    var btn = document.querySelector(".wa-float");
-    var hero = document.querySelector(".hero");
-    if (!btn || !hero || !window.IntersectionObserver) {
-      if (btn) btn.classList.add("is-visible");
-      return;
-    }
-    new IntersectionObserver(function (entries) {
-      btn.classList.toggle("is-visible", !entries[0].isIntersecting);
-    }).observe(hero);
+  // destaca a categoria ativa na barra sticky
+  function activeCategory() {
+    var links = Array.prototype.slice.call(
+      document.querySelectorAll(".cats__item")
+    );
+    var secs = links
+      .map(function (l) {
+        return document.querySelector(l.getAttribute("href"));
+      })
+      .filter(Boolean);
+    if (!secs.length || !window.IntersectionObserver) return;
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var i = secs.indexOf(en.target);
+          links.forEach(function (l, j) {
+            l.classList.toggle("is-active", j === i);
+          });
+        });
+      },
+      { rootMargin: "-20% 0px -72% 0px" }
+    );
+    secs.forEach(function (s) {
+      io.observe(s);
+    });
   }
 
   function scrollReveal() {
     var items = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-    if (reduceMotion || !window.IntersectionObserver) return; // ficam visíveis por padrão
+    if (reduceMotion || !window.IntersectionObserver) return;
 
     document.documentElement.classList.add("js-anim");
 
     function show(n) {
       if (n.classList.contains("is-visible")) return;
-      var sibs = Array.prototype.slice.call(
-        n.parentNode.querySelectorAll(".reveal")
-      );
-      n.style.transitionDelay = Math.min(sibs.indexOf(n), 6) * 60 + "ms";
       n.classList.add("is-visible");
       io.unobserve(n);
     }
-
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (e) {
@@ -77,12 +93,14 @@
       io.observe(n);
     });
 
-    // failsafe: se um scroll rápido "pular" um item, revela o que já passou da dobra
     var t;
     function sweep() {
       items.forEach(function (n) {
-        if (n.classList.contains("is-visible")) return;
-        if (n.getBoundingClientRect().top < window.innerHeight * 1.15) show(n);
+        if (
+          !n.classList.contains("is-visible") &&
+          n.getBoundingClientRect().top < window.innerHeight * 1.15
+        )
+          show(n);
       });
     }
     window.addEventListener(
@@ -98,9 +116,9 @@
   }
 
   RB.initUI = function () {
-    headerOnScroll();
+    revealChromeOnScroll();
     smoothAnchors();
-    floatingWhatsApp();
+    activeCategory();
     scrollReveal();
   };
 })((window.RB = window.RB || {}));
