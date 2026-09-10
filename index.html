@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal Burguer — Cardápio Digital</title>
+  <meta name="description" content="Royal Burguer — sabor de verdade em cada mordida. Veja o cardápio e peça pelo WhatsApp." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%91%91%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a href="#topo" class="logo" aria-label="Royal Burguer — início">
+        <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M12 16 L16 8 L20 15 L24 6 L28 15 L32 8 L36 16 Z" fill="#F2A93B"/>
+          <rect x="10" y="17" width="28" height="5" rx="2.5" fill="#F2A93B"/>
+          <path d="M11 27 q13 -9 26 0" fill="none" stroke="#3D2415" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="10" y1="33" x2="38" y2="33" stroke="#3D2415" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M11 39 q13 7 26 0" fill="none" stroke="#3D2415" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__text">Royal <strong>Burguer</strong></span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Navegação principal">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="btn btn--gold btn--sm site-header__cta" data-wa href="#">
+        Pedir no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__stage">
+          <canvas id="burger-canvas" class="hero__canvas" aria-label="Hambúrguer 3D interativo — arraste para girar" role="img"></canvas>
+          <div class="hero__fallback" aria-hidden="true">🍔</div>
+          <p class="hero__hint">🖱️ Arraste para girar</p>
+          <div class="hero__zoom" hidden>
+            <button type="button" data-zoom="out" aria-label="Afastar">–</button>
+            <button type="button" data-zoom="in" aria-label="Aproximar">+</button>
+          </div>
+        </div>
+
+        <div class="hero__text">
+          <p class="hero__eyebrow">👑 Cardápio digital</p>
+          <h1 class="hero__title">Royal <span>Burguer</span></h1>
+          <p class="hero__slogan">Sabor de verdade em cada mordida.</p>
+          <p class="hero__lead">
+            Blend artesanal, pão feito na hora e ingredientes fresquinhos.
+            Mais que um hambúrguer, uma experiência.
+          </p>
+          <div class="hero__actions">
+            <a href="#cardapio" class="btn btn--gold">Ver Cardápio</a>
+            <a class="btn btn--ghost" data-wa href="#">Pedir no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="wave wave--brown" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C240,120 420,10 720,45 C1020,80 1200,10 1440,55 L1440,90 L0,90 Z"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== Barra de categorias ===== -->
+    <nav class="cat-nav" id="cat-nav" aria-label="Categorias do cardápio"></nav>
+
+    <!-- ===== Cardápio ===== -->
+    <section id="cardapio" class="section cardapio">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title">Nosso Cardápio</h2>
+          <p class="section__sub">Preços e itens fictícios — projeto demonstrativo.</p>
+        </header>
+        <div id="cardapio-lista"></div>
+      </div>
+    </section>
+
+    <!-- ===== Diferenciais ===== -->
+    <section class="diferenciais">
+      <div class="wave wave--top" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,45 C240,10 420,80 720,45 C1020,10 1200,80 1440,40 L1440,0 L0,0 Z"/></svg>
+      </div>
+      <div class="wrap diferenciais__grid">
+        <div class="diferencial reveal">
+          <span class="diferencial__ico" aria-hidden="true">🌿</span>
+          <h3>Ingredientes frescos</h3>
+          <p>Pão e blend preparados todo dia.</p>
+        </div>
+        <div class="diferencial reveal">
+          <span class="diferencial__ico" aria-hidden="true">🔥</span>
+          <h3>Feito na hora</h3>
+          <p>Seu pedido começa quando você pede.</p>
+        </div>
+        <div class="diferencial reveal">
+          <span class="diferencial__ico" aria-hidden="true">🛵</span>
+          <h3>Entrega rápida</h3>
+          <p>Quentinho na sua porta.</p>
+        </div>
+      </div>
+      <div class="wave wave--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,45 C240,80 420,10 720,45 C1020,80 1200,10 1440,50 L1440,90 L0,90 Z"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== CTA final ===== -->
+    <section class="cta-final">
+      <div class="wrap">
+        <h2>Deu fome?</h2>
+        <p>Faça seu pedido agora pelo WhatsApp.</p>
+        <a class="btn btn--gold btn--lg" data-wa href="#">Pedir no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer id="contato" class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div>
+        <span class="logo logo--footer">
+          <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M12 16 L16 8 L20 15 L24 6 L28 15 L32 8 L36 16 Z" fill="#F2A93B"/>
+            <rect x="10" y="17" width="28" height="5" rx="2.5" fill="#F2A93B"/>
+            <path d="M11 27 q13 -9 26 0" fill="none" stroke="#F7EEDD" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="10" y1="33" x2="38" y2="33" stroke="#F7EEDD" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M11 39 q13 7 26 0" fill="none" stroke="#F7EEDD" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+          <span class="logo__text">Royal <strong>Burguer</strong></span>
+        </span>
+        <p class="site-footer__tag">Sabor de verdade em cada mordida.</p>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <p data-cfg="endereco"></p>
+        <p data-cfg="horario"></p>
+      </div>
+
+      <div>
+        <h4>Peça já</h4>
+        <p><a class="site-footer__link" data-wa href="#">WhatsApp</a></p>
+        <p><a class="site-footer__link" data-cfg="instagram" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
+    </div>
+    <div class="wrap site-footer__legal">
+      <p>© <span data-year>2026</span> Royal Burguer — Cardápio digital. Projeto demonstrativo.</p>
+      <p>Dados, preços e contatos são fictícios.</p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante -->
+  <a class="wa-float" data-wa href="#" aria-label="Pedir no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" width="28" height="28">
+      <path fill="currentColor" d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.8 1 3.9 1.5 6.2 1.5 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1 1.1-3.9-.3-.4C6.6 19.6 6 17.8 6 16 6 10.5 10.5 6 16 6s10 4.5 10 10-4.5 10.6-10 10.6zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.3 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/>
+    </svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="data/menu.js" defer></script>
+  <script src="assets/js/burger3d.js" defer></script>
+  <script src="assets/js/menu.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
