@@ -2,26 +2,7 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
-## 2026-09-10 — "Lanche do Momento": vídeo no lugar do 3D
-
-Cliente decidiu usar um **vídeo do hambúrguer girando** em vez do modelo 3D.
-Fonte: `C:\Users\wesle\Downloads\Hamburger Girando.mp4` (1280×720, 5,3s, 4,8 MB).
-
-- Processado com ffmpeg: crop central 720², escala 640², sem áudio, H.264
-  `crf 30` + faststart → **`assets/video/burger-spin.mp4` (~350 KB)**.
-- Poster: `assets/img/burger-spin-poster.jpg` (~40 KB, frame inicial).
-- `<video autoplay loop muted playsinline>` no `.feature__stage`. Como o vídeo
-  entra via `innerHTML`, o autoplay não dispara sozinho → `renderFeature` faz
-  `v.muted=true; v.play()` + IntersectionObserver (toca ao entrar na tela, pausa
-  ao sair).
-- **Three.js removido** do projeto: apagado `assets/js/burger3d.js`, tirado o
-  `<script>` do CDN e a chamada em `main.js`. O fundo creme do vídeo combina com
-  a seção `.feature`.
-- (Tentativas anteriores de 3D — TRELLIS.2, Meshy, Tripo, model-viewer — ficaram
-  no caminho; TRELLIS.2 via API do HuggingFace funciona mas trava na cota de GPU
-  sem token. Guardado caso um dia queira o 3D de novo.)
-
-## 2026-09-10 — "Lanche do Momento" com 3D 360° (só 1 item) [substituído por vídeo]
+## 2026-09-10 — "Lanche do Momento" com 3D 360° (só 1 item)
 
 Cliente quis o 360° de volta, mas **só num item destaque** (não no hero), estilo
 **cartoon**. Discutido: foto giratória precisa de ~32 fotos com prato giratório

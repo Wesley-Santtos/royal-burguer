@@ -66,7 +66,7 @@
     return art;
   }
 
-  // bloco "Lanche do Momento" com vídeo do hambúrguer girando
+  // bloco "Lanche do Momento" com hambúrguer 3D
   RB.renderFeature = function (host) {
     var menu = window.RB_MENU || [];
     var item = null;
@@ -77,20 +77,19 @@
     });
     if (!item || !host) {
       if (host) host.hidden = true;
-      return;
+      return null;
     }
 
     host.innerHTML =
       '<p class="feature__kicker">⭐ Lanche do Momento</p>' +
       '<div class="feature__stage">' +
-      '<video class="feature__video" autoplay loop muted playsinline ' +
-      'preload="metadata" poster="assets/img/burger-spin-poster.jpg" ' +
+      '<canvas id="feat-canvas" class="feature__canvas" role="img" ' +
       'aria-label="' +
       item.nome +
-      ' girando">' +
-      '<source src="assets/video/burger-spin.mp4" type="video/mp4" />' +
-      "</video>" +
+      ' em 3D — arraste para girar"></canvas>' +
+      '<div class="feature__fallback" aria-hidden="true">🍔</div>' +
       "</div>" +
+      '<p class="feature__hint"><span aria-hidden="true">↻</span> arraste para girar</p>' +
       '<h2 class="feature__name">' +
       item.nome +
       "</h2>" +
@@ -101,23 +100,7 @@
       brl.format(item.preco) +
       "</span>" +
       '<a class="btn btn--gold" data-wa href="#">Pedir no WhatsApp</a>';
-
-    // vídeo inserido via innerHTML não respeita autoplay sozinho — força o play
-    var v = host.querySelector(".feature__video");
-    if (v) {
-      v.muted = true;
-      var tryPlay = function () {
-        var p = v.play();
-        if (p && p.catch) p.catch(function () {});
-      };
-      tryPlay();
-      if (window.IntersectionObserver) {
-        new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting) tryPlay();
-          else v.pause();
-        }).observe(v);
-      }
-    }
+    return document.getElementById("feat-canvas");
   };
 
   RB.renderMenu = function (lista, cats) {
