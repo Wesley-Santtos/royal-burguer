@@ -66,7 +66,7 @@
     return art;
   }
 
-  // bloco "Lanche do Momento" com hambúrguer 3D
+  // bloco "Lanche do Momento" com foto do item em destaque
   RB.renderFeature = function (host) {
     var menu = window.RB_MENU || [];
     var item = null;
@@ -77,19 +77,18 @@
     });
     if (!item || !host) {
       if (host) host.hidden = true;
-      return null;
+      return;
     }
 
     host.innerHTML =
       '<p class="feature__kicker">⭐ Lanche do Momento</p>' +
       '<div class="feature__stage">' +
-      '<canvas id="feat-canvas" class="feature__canvas" role="img" ' +
-      'aria-label="' +
+      '<img class="feature__photo" src="' +
+      (item.featureImg || item.img) +
+      '" alt="' +
       item.nome +
-      ' em 3D — arraste para girar"></canvas>' +
-      '<div class="feature__fallback" aria-hidden="true">🍔</div>' +
+      '" />' +
       "</div>" +
-      '<p class="feature__hint"><span aria-hidden="true">↻</span> arraste para girar</p>' +
       '<h2 class="feature__name">' +
       item.nome +
       "</h2>" +
@@ -100,7 +99,6 @@
       brl.format(item.preco) +
       "</span>" +
       '<a class="btn btn--gold" data-wa href="#">Pedir no WhatsApp</a>';
-    return document.getElementById("feat-canvas");
   };
 
   RB.renderMenu = function (lista, cats) {

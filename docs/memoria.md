@@ -2,6 +2,31 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — "Lanche do Momento": foto estática (3D removido de novo)
+
+Cliente mandou `Lanche do momento.jfif` — um mockup gerado por IA do bloco
+inteiro (selo + foto + textos + botão). Só a **foto** (burger Royal Bacon numa
+tábua de madeira, com alecrim e jarra de cobre) era conteúdo novo; o resto já
+existe como HTML/CSS reais no site.
+
+- Recortada (removi o selo e o texto "arraste para girar" que vieram
+  embutidos na imagem), redimensionada (900px), exportada JPEG ~94 KB →
+  `assets/img/lanche-momento.jpg`.
+- `data/menu.js`: novo campo opcional `featureImg` no item com
+  `destaque: true` — foto grande só pro bloco "Lanche do Momento", separada da
+  `img` (miniatura do card no cardápio). Royal Bacon tem as duas.
+- **Three.js removido outra vez**: `burger3d.js` apagado, script do CDN e
+  `initFeature` fora do `main.js`. Sem interação de arrastar (é foto estática,
+  não 3D) — tirei o hint "arraste para girar" do HTML real também.
+- `.feature__stage` deixou de ser quadrado: agora usa a proporção real da foto
+  (`900/577`), `max-width: 380px`, cantos 22px, sombra — mesma linguagem visual
+  usada quando era vídeo.
+- **Nota de ambiente:** o preview local voltou a servir conteúdo antigo depois
+  de editar os arquivos (mesmo com o servidor certo rodando) — parece cache de
+  disco do navegador do preview, não do `python -m http.server`. Contornado
+  buscando os `.js` com `fetch(...,{cache:'no-store'})` e rodando `eval` neles
+  na página já aberta. Não afeta o site publicado (GitHub Pages/Firebase).
+
 ## 2026-09-11 — Primeira foto real: Royal Clássico
 
 Cliente mandou uma foto isolada (fundo transparente) do cheeseburger clássico.

@@ -38,9 +38,11 @@ Site **voltado para celular** (moldura máx. 480px).
   em `--red` na base da foto. Referência: mockup do cliente (foto do lanche
   "flutuando" sobre o painel).
 - **Lanche do Momento (`.feature`):** bloco em `--cream` entre a barra de
-  categorias e o cardápio. Selo dourado "⭐ Lanche do Momento", hambúrguer 3D
-  (Three.js, cartoon, gira 360°) em palco de até 300px, dica "↻ arraste para
-  girar", nome (Baloo 2), descrição, preço em `--brown`, botão WhatsApp.
+  categorias e o cardápio. Selo dourado "⭐ Lanche do Momento", **foto** do item
+  em destaque (`featureImg` em `data/menu.js`) num palco de até 380px, cantos
+  22px, sombra funda, proporção da própria foto (`aspect-ratio: 900/577`),
+  nome (Baloo 2), descrição, preço em `--brown`, botão WhatsApp. (Já foi 3D em
+  Three.js e vídeo — o cliente decide o formato; ver `docs/memoria.md`.)
 - **CTA final:** faixa `--brown`, texto creme, botão dourado.
 - **Rodapé:** `--ink`, texto creme, marca + frase manuscrita + contato + links.
 - **Botão flutuante WhatsApp:** verde, canto inferior direito, aparece após o hero.
