@@ -2,6 +2,14 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — Segunda foto real: Royal Bacon (card do cardápio)
+
+`burger2.png` (fundo já transparente) → recorte + respiro + resize →
+`assets/img/itens/royal-bacon.webp` (~107 KB). `img` do Royal Bacon em
+`data/menu.js` preenchido — mesmo tratamento das fotos reais (sem máscara,
+`drop-shadow`). Já tinha `featureImg` pro "Lanche do Momento"; agora também
+tem foto no card da lista.
+
 ## 2026-09-11 — Remove a tábua da foto (segmentação com IA)
 
 Pedido final: nada de fundo na foto do "Lanche do Momento", só cor sólida (a

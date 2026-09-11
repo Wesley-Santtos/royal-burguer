@@ -33,7 +33,7 @@ window.RB_MENU = [
         descricao:
           "Blend 180g, cheddar, bacon crocante, cebola caramelizada e maionese defumada.",
         preco: 34,
-        img: "",
+        img: "assets/img/itens/royal-bacon.webp",
         destaque: true, // aparece no bloco "Lanche do Momento" (só um item)
         featureImg: "assets/img/lanche-momento.webp", // foto grande só do destaque (fundo infinito)
       },
