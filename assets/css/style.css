@@ -137,16 +137,13 @@ a { color: inherit; text-decoration: none; }
   padding: 0.28rem 0.9rem;
   border-radius: 999px;
 }
-/* palco de "fundo infinito": sweep contínuo, sem emenda, tipo estúdio de fotografia */
+/* palco de "fundo infinito": sweep contínuo, funde com a página, sem moldura */
 .feature__stage {
   width: 100%;
   max-width: 380px;
   aspect-ratio: 900 / 657;
   margin: 0.6rem auto 0;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 18px 34px rgba(59, 32, 17, 0.22);
-  background: radial-gradient(120% 100% at 50% 0%, #fbf6ea 0%, #f1e2c2 62%, #e6cd9e 100%);
+  background: radial-gradient(65% 75% at 50% 42%, #f1e2c2 0%, #f1e2c2 45%, var(--cream) 100%);
   display: flex;
   align-items: center;
   justify-content: center;

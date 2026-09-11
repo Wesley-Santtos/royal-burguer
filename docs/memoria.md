@@ -2,6 +2,14 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — "Lanche do Momento": sem moldura
+
+Cliente pediu pra remover as bordas do palco. Tirei `border-radius`,
+`overflow: hidden` e o `box-shadow` do `.feature__stage` — o gradiente agora
+funde direto com o `--cream` da seção (`radial-gradient(...→ var(--cream)
+100%)`), sem contorno de "cartão" nenhum. A foto fica flutuando na página, só
+com a sombra própria dela (`drop-shadow` na `.feature__photo`).
+
 ## 2026-09-11 — "Lanche do Momento": fundo infinito
 
 Cliente mandou `burger.png` (mesmo Royal Bacon, agora recortado com fundo
