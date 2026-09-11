@@ -30,10 +30,13 @@ Site **voltado para celular** (moldura máx. 480px).
 - **Hero:** imagem única `assets/img/hero.jpg`, full-width da moldura.
 - **Barra de categorias:** sticky no topo; ícone de linha (SVG marrom) + pílula
   marrom com o nome em caixa alta. Categoria ativa = pílula dourada.
-- **Card do item (`.dish`):** foto redonda (Ø ~116px, borda branca 4px, sombra)
-  sangrando ~14px para a esquerda; nome em Baloo 2 sobre o branco; painel
-  `--brown-soft` arredondado (raio 18px) com descrição branca + preço em `#FFE6BF`.
-  Selo opcional em `--red` na base da foto.
+- **Card do item (`.dish`):** foto em blob orgânico (142px, `border-radius: 38%
+  38% 38% 12%`, sem borda, sombra funda) sangrando ~18px para a esquerda e
+  encaixando no canto superior esquerdo do painel; nome em Baloo 2 sobre o
+  branco; painel `--brown-soft` com raio assimétrico (`34px 20px 20px 20px`,
+  ecoa a curva da foto) com descrição branca + preço em `#FFE6BF`. Selo opcional
+  em `--red` na base da foto. Referência: mockup do cliente (foto do lanche
+  "flutuando" sobre o painel).
 - **Lanche do Momento (`.feature`):** bloco em `--cream` entre a barra de
   categorias e o cardápio. Selo dourado "⭐ Lanche do Momento", hambúrguer 3D
   (Three.js, cartoon, gira 360°) em palco de até 300px, dica "↻ arraste para

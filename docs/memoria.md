@@ -2,6 +2,19 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — Card do cardápio: foto em blob (fiel ao mockup)
+
+Cliente reenviou a referência do card ("Nome Hamburger" / "Informações do
+Hamburger") pedindo pra seguir mais de perto como o produto se apresenta.
+Ajustado só CSS (`.dish__photo` / `.dish__panel`), sem mudar a estrutura:
+
+- Foto: de círculo (Ø116, borda branca) → **blob orgânico** 142px,
+  `border-radius: 38% 38% 38% 12%`, sem borda, sombra mais funda.
+- Painel: raio uniforme 18px → **assimétrico** `34px 20px 20px 20px`, o canto
+  grande encaixa com a curva da foto.
+- Overlap maior (`margin-left: -64px`, foto `left: -18px`) pra foto "flutuar"
+  mais sobre o painel, como no mockup.
+
 ## 2026-09-10 — "Lanche do Momento" com 3D 360° (só 1 item)
 
 Cliente quis o 360° de volta, mas **só num item destaque** (não no hero), estilo
