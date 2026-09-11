@@ -2,6 +2,15 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — Ajustes finos: fundo liso, respiro no botão, nomes à direita
+
+- `.feature__stage`: tirou o gradiente também — sem fundo nenhum, a foto flutua
+  direto sobre o `--cream` da seção (só a `drop-shadow` da própria foto).
+- `.feature`: mais respiro embaixo do botão "Pedir no WhatsApp"
+  (`padding-bottom` 0.4rem → 1.4rem) antes de entrar no branco do cardápio.
+- `.dish__name`: `text-align: right` — nomes dos itens (Royal Clássico, Royal
+  Bacon, Royal Duplo...) alinhados à direita em vez de esquerda.
+
 ## 2026-09-11 — "Lanche do Momento": tira "arraste para girar"
 
 Cliente pediu pra remover de vez. Fazia sentido no 3D, ficou como legado
