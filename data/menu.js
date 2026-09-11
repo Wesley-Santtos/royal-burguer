@@ -35,7 +35,7 @@ window.RB_MENU = [
         preco: 34,
         img: "",
         destaque: true, // aparece no bloco "Lanche do Momento" (só um item)
-        featureImg: "assets/img/lanche-momento.jpg", // foto grande só do destaque
+        featureImg: "assets/img/lanche-momento.webp", // foto grande só do destaque (fundo infinito)
       },
       {
         nome: "Royal Duplo",

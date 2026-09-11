@@ -2,6 +2,20 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — "Lanche do Momento": fundo infinito
+
+Cliente mandou `burger.png` (mesmo Royal Bacon, agora recortado com fundo
+transparente) pedindo "fundo infinito" — o efeito de estúdio de fotografia de
+produto onde não tem emenda visível entre o chão e o fundo.
+
+- Recorte + respiro (6%) + resize + `assets/img/lanche-momento.webp` (troca o
+  `.jpg` da tábua de madeira, ~84 KB). `featureImg` do Royal Bacon atualizado.
+- `.feature__stage`: em vez de `object-fit: cover` cortando uma foto de cena,
+  agora é um palco com `radial-gradient` (creme claro no topo → tom mais
+  profundo embaixo, tons da paleta) e a foto entra com `object-fit: contain` +
+  `drop-shadow` — mesmo tratamento das fotos reais dos cards do cardápio.
+- Proporção do palco ajustada pra imagem nova (`900/657`).
+
 ## 2026-09-11 — "Lanche do Momento": foto estática (3D removido de novo)
 
 Cliente mandou `Lanche do momento.jfif` — um mockup gerado por IA do bloco
