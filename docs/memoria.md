@@ -2,6 +2,26 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — Primeira foto real: Royal Clássico
+
+Cliente mandou uma foto isolada (fundo transparente) do cheeseburger clássico.
+
+- Processada com Pillow: recorte pra caixa do conteúdo + 4% de respiro +
+  redimensionada (lado maior 900px) + exportada **WebP** (3,3 MB → 158 KB).
+  Salva em `assets/img/itens/royal-classico.webp`.
+- `data/menu.js`: `img` do Royal Clássico preenchido.
+- **Tratamento visual diferente do placeholder:** fotos reais não usam mais a
+  máscara blob — aparecem inteiras (`object-fit: contain`) com
+  `filter: drop-shadow(...)` acompanhando o contorno do produto, igual à
+  referência do cliente. O placeholder (sem foto) continua com o blob colorido
+  + emoji. Ver `.dish__photo img` vs `.dish__photo.is-placeholder` em
+  `assets/css/style.css`.
+- **Nota pra próxima sessão:** durante os testes locais um `python -m
+  http.server 5500` antigo ficou preso servindo uma pasta desatualizada
+  (processo vivo de uma janela de trabalho anterior). Se o preview local
+  parecer "não atualizar" mesmo com o arquivo certo no disco, mate o processo
+  na porta 5500 e suba de novo a partir da raiz do projeto.
+
 ## 2026-09-11 — Card do cardápio: foto em blob (fiel ao mockup)
 
 Cliente reenviou a referência do card ("Nome Hamburger" / "Informações do

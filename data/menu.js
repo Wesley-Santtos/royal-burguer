@@ -26,7 +26,7 @@ window.RB_MENU = [
           "Blend 180g, queijo prato, alface, tomate, cebola roxa e molho da casa no pão brioche.",
         preco: 28,
         tag: "Mais pedido",
-        img: "",
+        img: "assets/img/itens/royal-classico.webp",
       },
       {
         nome: "Royal Bacon",
