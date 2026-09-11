@@ -89,7 +89,6 @@
       item.nome +
       '" />' +
       "</div>" +
-      '<p class="feature__hint"><span aria-hidden="true">↻</span> arraste para girar</p>' +
       '<h2 class="feature__name">' +
       item.nome +
       "</h2>" +

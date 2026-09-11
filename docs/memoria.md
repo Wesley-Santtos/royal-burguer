@@ -2,6 +2,13 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — "Lanche do Momento": tira "arraste para girar"
+
+Cliente pediu pra remover de vez. Fazia sentido no 3D, ficou como legado
+quando virou foto (eu já tinha achado estranho, mas segui a referência dele
+por fidelidade — agora ele confirmou que não quer). `.feature__hint` some do
+`menu.js` e a regra correspondente sai do CSS.
+
 ## 2026-09-11 — "Lanche do Momento": sem moldura
 
 Cliente pediu pra remover as bordas do palco. Tirei `border-radius`,
