@@ -2,6 +2,23 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — Remove a tábua da foto (segmentação com IA)
+
+Pedido final: nada de fundo na foto do "Lanche do Momento", só cor sólida (a
+do `--cream` da página). O CSS já estava assim, mas a **tábua de madeira** da
+foto continuava aparecendo — cliente considerava ela parte do "fundo" a tirar.
+
+- Instalado `rembg` (modelo `bria-rmbg-2.0`, ~1GB, baixado uma vez em
+  `~/.rembg/models/`) — remoção de fundo por segmentação, não por cor.
+  Rodado sobre o `burger.png` original (com a tábua) e isolou só o
+  hambúrguer, limpo, sem halo.
+- Recorte + respiro (5%) + resize + `assets/img/lanche-momento.webp`
+  atualizado (900×826, ~197 KB).
+- `.feature__stage`: `aspect-ratio` ajustado pra proporção nova (`900/826`),
+  `max-width` reduzido pra 340px (a imagem sem tábua é mais "alta e estreita").
+- Resultado: hambúrguer flutuando puro sobre o creme sólido da seção, sem
+  nenhum elemento de cena.
+
 ## 2026-09-11 — Ajustes finos: fundo liso, respiro no botão, nomes à direita
 
 - `.feature__stage`: tirou o gradiente também — sem fundo nenhum, a foto flutua
