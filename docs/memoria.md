@@ -2,6 +2,11 @@
 
 Log de decisões e aprendizados. Mais recente no topo.
 
+## 2026-09-11 — Nomes dos itens: respiro da borda direita
+
+`.dish__name` ganhou `padding-right: 0.6rem` — estava alinhado à direita mas
+colado na borda do painel; agora tem uma folga pequena.
+
 ## 2026-09-11 — Segunda foto real: Royal Bacon (card do cardápio)
 
 `burger2.png` (fundo já transparente) → recorte + respiro + resize →
